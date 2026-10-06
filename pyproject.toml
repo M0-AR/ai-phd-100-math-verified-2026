@@ -1,0 +1,8 @@
+[project]
+name = "ai-phd-100-math-verified"
+version = "1.0.0"
+description = "100 AI-PhD math exercises, fully verified on synthetic + public + live-market data"
+requires-python = ">=3.10"
+dependencies = ["numpy==1.26.4", "torch==2.3.1", "scipy==1.13.1", "pytest==8.3.2"]
+[tool.pytest.ini_options]
+testpaths = ["tests"]

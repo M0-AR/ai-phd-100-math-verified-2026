@@ -1,0 +1,13 @@
+services:
+  research:
+    build: .
+    volumes:
+      - ./benchmarks:/app/benchmarks
+      - ./data:/app/data
+    command: python experiments/run_all.py
+  live-verify:
+    build: .
+    volumes:
+      - ./benchmarks:/app/benchmarks
+      - ./data:/app/data
+    command: python experiments/live_market_verify.py

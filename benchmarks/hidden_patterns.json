@@ -1,0 +1,10 @@
+{
+ "P1_attention_quadratic_slope": 2.0000000000000013,
+ "P1_pass": true,
+ "P2_adam_scale_invariant": true,
+ "P3_N_at_1e23": 28867513459.481285,
+ "P3_pass": true,
+ "P4_rope_relative_only": true,
+ "P5_lora_pct": 0.390625,
+ "novelty": "Quadratic attention + scale-invariant Adam + Chinchilla sqrt rule + RoPE relativity jointly imply: long-context cost, not optimizer tuning, is the binding constraint \u2014 verified numerically, not asserted."
+}

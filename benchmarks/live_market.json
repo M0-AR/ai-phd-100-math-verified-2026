@@ -1,0 +1,31 @@
+{
+ "anchor_date": "2026-10-06",
+ "sources": "CoinGecko BTC 30d + ECB FX + Yahoo AAPL (snapshot; live-refresh attempted)",
+ "live_btc_now": {
+  "bitcoin": {
+   "usd": 86142
+  }
+ },
+ "btc_n": 30,
+ "btc_var": 0.00038026596444528857,
+ "btc_mean": 0.002449862476072705,
+ "ex44_se": 0.003560271358783806,
+ "ex57_ci95": [
+  -0.004528269387143555,
+  0.009427994339288964
+ ],
+ "ex57_significant": false,
+ "ex58_gap": -0.005317789072557163,
+ "ex58_z": -0.7409945557587235,
+ "ex60_se_n": 0.003560271358783806,
+ "ex60_se_100x": 0.00035602713587838057,
+ "hidden_btc_daily_vol": 0.01917264802517149,
+ "hidden_eur_daily_vol": 0.0025785169373562745,
+ "hidden_vol_ratio": 7.435533095558798,
+ "hidden_btc_kurtosis": 3.801868960097239,
+ "hidden_claim": "BTC daily vol >> EUR vol (order of magnitude); returns leptokurtic \u2014 textbook variance laws (Ex44/57-60) hold on live data, Gaussian tail assumption does not.",
+ "aapl_anchor": {
+  "current": 332.89,
+  "last_close": 333.69
+ }
+}
