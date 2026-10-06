@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>100 AI-PhD Math Exercises — Verified 100/100 + Live Market Data</title>
+<meta name="description" content="Every one of 100 AI math ideas recomputed in code, tested on live Bitcoin/FX/Apple data. Interactive charts, 10-question quiz, animated demo.">
+<style>
+:root{--bg:#0b1020;--card:#141b33;--ink:#eaf0ff;--mut:#9fb0d8;--acc:#5eead4;--acc2:#a78bfa;--good:#34d399;--bad:#f87171;--warn:#fbbf24}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;background:linear-gradient(180deg,#0b1020,#0e1430 40%,#0b1020);color:var(--ink)}
+.wrap{max-width:1080px;margin:0 auto;padding:24px}
+.hero{display:grid;grid-template-columns:1.2fr .8fr;gap:20px;align-items:center;padding:28px;background:radial-gradient(600px 300px at 20% 0%,#1b2450,transparent),var(--card);border:1px solid #26315c;border-radius:18px}
+h1{font-size:34px;margin:0 0 8px}.sub{color:var(--mut);line-height:1.6}
+.badges span{display:inline-block;background:#0e1530;border:1px solid #2b3a6e;border-radius:999px;padding:4px 10px;margin:4px 6px 0 0;font-size:12px;color:var(--mut)}
+.ring{width:190px;height:190px;margin:0 auto;position:relative}
+.ring svg{transform:rotate(-90deg)}.ring b{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:34px}
+.ring small{font-size:12px;color:var(--mut)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin:20px 0}
+.card{background:var(--card);border:1px solid #26315c;border-radius:14px;padding:16px}
+.card h3{margin:0 0 6px;font-size:16px}.card p{margin:0;color:var(--mut);font-size:13.5px;line-height:1.55}
+a{color:var(--acc)}button{background:linear-gradient(90deg,var(--acc),var(--acc2));border:0;color:#06121a;font-weight:700;border-radius:10px;padding:10px 16px;cursor:pointer;font-size:15px}
+button.ghost{background:#0e1530;color:var(--ink);border:1px solid #2b3a6e}
+canvas{width:100%;height:220px;background:#0c1229;border:1px solid #232e5b;border-radius:10px}
+.q{border:1px solid #2b3a6e;border-radius:12px;padding:14px;margin:12px 0;background:#10173a}
+.q h4{margin:0 0 8px}.opt{display:block;width:100%;text-align:left;margin:6px 0;background:#0c1330;color:var(--ink);border:1px solid #2b3a6e;font-weight:400}
+.opt.correct{border-color:var(--good);background:#0b2b22}.opt.wrong{border-color:var(--bad);background:#2b1215}
+.exp{display:none;color:var(--mut);font-size:13px;margin-top:8px;line-height:1.5}.exp.show{display:block}
+.term{background:#05070f;border:1px solid #26315c;border-radius:12px;padding:14px;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:13px;min-height:220px;white-space:pre-wrap;line-height:1.6}
+.bar{height:10px;background:#0c1330;border-radius:99px;overflow:hidden;border:1px solid #26315c}.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--acc),var(--acc2))}
+.steps{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}.steps span{background:#0e1530;border:1px solid #2b3a6e;padding:6px 10px;border-radius:99px;font-size:12px;color:var(--mut)}
+.steps span.on{background:#12312b;color:var(--acc);border-color:var(--acc)}
+table{width:100%;border-collapse:collapse;font-size:13px}th,td{border-bottom:1px solid #22305c;padding:8px;text-align:left}th{color:var(--mut)}
+@media(max-width:800px){.hero{grid-template-columns:1fr}h1{font-size:26px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="hero" id="top">
+<div>
+<div class="badges"><span>✔ 100/100 verified</span><span>📊 live BTC · FX · AAPL</span><span>🐳 Docker</span><span>📄 MIT</span></div>
+<h1>100 AI-PhD Math Exercises, Verified.</h1>
+<p class="sub"><b>CEO summary:</b> 100 ideas inside real AI models — shapes, attention, LoRA, Adam, scaling laws — each recomputed in code and re-tested on <b>live market data</b>. Result: <b>100/100 pass</b>, 4 hidden patterns, one interactive page. New here? Start with the <a href="#beginner">beginner path</a>, then take the <a href="#quiz">10-question quiz</a>.</p>
+<p><button onclick="document.getElementById('quiz').scrollIntoView({behavior:'smooth'})">▶ Take the 10-question quiz</button>
+<button class="ghost" onclick="document.getElementById('demo').scrollIntoView({behavior:'smooth'})">Watch 60-sec demo</button></p>
+<div class="steps" id="path"><span>1 shapes</span><span>2 spectra</span><span>3 calculus</span><span>4 backprop</span><span>5 probability</span><span>6 statistics</span><span>7 information</span><span>8 optimization</span><span>9 numerics</span><span>10 transformers</span></div>
+</div>
+<div class="ring">
+<svg width="190" height="190" viewBox="0 0 190 190"><circle cx="95" cy="95" r="80" fill="none" stroke="#22305c" stroke-width="16"/><circle id="ringArc" cx="95" cy="95" r="80" fill="none" stroke="#5eead4" stroke-width="16" stroke-linecap="round" stroke-dasharray="502.6" stroke-dashoffset="0"/></svg>
+<b>100<small>/100 verified</small></b>
+</div>
+</div>
+
+<div class="grid">
+<div class="card"><h3>🧱 Shapes &amp; LoRA</h3><p><code>32×512 @ 512×2048 → 32×2048</code>, 67,108,864 ops. Rank-8 LoRA tunes 65,536 numbers instead of 16,777,216 (0.39%). Broadcasting <code>32×1×64 + 1×10×64 → 32×10×64</code>.</p></div>
+<div class="card"><h3>🔭 Spectra &amp; stability</h3><p>Eigenvalues {3,1}, power iteration ×59049, <code>0.9⁵⁰≈0.005</code> vs <code>1.1⁵⁰≈117</code>, SVD {2,1}, clip (6,8)→(3,4), condition 100.</p></div>
+<div class="card"><h3>⛓️ Calculus → backprop</h3><p>Chain rule 24, gradient (4,13), <code>dW=XᵀdY</code>, ReLU mask, residual <code>1+f′</code> highway, <code>0.25¹⁰≈1/1M</code>.</p></div>
+<div class="card"><h3>🎲 Probability → information</h3><p>Bayes 16.7%, Var(mean)=σ²/n, 95% in ±1.96, perplexity <code>e²≈7.39</code>, KL 0.511≠0.368, CE=H+KL.</p></div>
+<div class="card"><h3>🧮 Optimization → scale</h3><p>LR &lt; 0.04, momentum ×10, Adam step = ±LR at any scale, 7B = 14GB/112GB, <code>6ND=8.4e22</code>, KV-cache 2 GiB, Chinchilla 20 tok/param.</p></div>
+<div class="card"><h3>📊 Live-market proof</h3><p>BTC 30d + EUR + AAPL re-test CIs and 1/√n scaling. BTC vol 7.4× EUR vol, kurtosis ≈3.8 — laws hold, Gaussian tails don't.</p></div>
+</div>
+
+<h2 id="beginner">🌱 Beginner path — scratch to pro in 4 steps</h2>
+<div class="card"><p><b>Step 1 (15 min):</b> shapes are the game — run <code>python -c "print(32*2048*512*2)"</code>, then quiz Q1–Q2.
+<b>Step 2:</b> calculus is the chain rule — quiz Q3–Q4. <b>Step 3:</b> averaging divides variance by n — quiz Q5–Q7.
+<b>Step 4:</b> LR limits, Adam scale-invariance, quadratic attention — quiz Q8–Q10.
+<b>Rule we follow everywhere:</b> <i>"Let's work this out in a step-by-step way to be sure we have the right answer."</i> Score 10/10 and you know more than most interview candidates.</p></div>
+
+<h2>📈 Live charts (from <code>benchmarks/</code>, embedded for offline)</h2>
+<div class="grid">
+<div class="card"><h3>Bitcoin 30 closes + mean ±95% band</h3><canvas id="c1" width="600" height="220"></canvas><p id="c1cap"></p></div>
+<div class="card"><h3>Daily volatility: BTC vs EUR (log-returns)</h3><canvas id="c2" width="600" height="220"></canvas><p id="c2cap"></p></div>
+<div class="card"><h3>Attention cost is quadratic (log-log slope 2.00)</h3><canvas id="c3" width="600" height="220"></canvas><p>2·n²·d FLOPs, n=512…8192, d=4096. Doubling context quadruples cost.</p></div>
+</div>
+
+<h2 id="demo">🎥 Demo — 60 seconds, animated + reproducible</h2>
+<div class="card">
+<p><b>Video demo:</b> the animation below types the exact commands from the README. To ship a real MP4/GIF: <code>asciinema rec docs/demo.cast -c "make all"</code> or <code>terminalizer record demo -k &amp;&amp; terminalizer render demo -o assets/screenshots/demo.gif</code> (15 s, &lt;5 MB), then embed it here in a <code>&lt;video&gt;</code> tag.</p>
+<video id="demoVideo" controls width="100%" poster="" style="border:1px solid #26315c;border-radius:12px;background:#05070f"><source src="assets/screenshots/demo.mp4" type="video/mp4">Your browser supports the animated terminal below instead.</video>
+<div class="term" id="term"></div>
+<p><button onclick="playDemo()">▶ Replay demo</button> <button class="ghost" onclick="runQuizDemo()">Auto-answer 1 quiz question</button></p>
+</div>
+
+<h2 id="quiz">🧠 Interactive quiz — 10 questions, one per chapter</h2>
+<div class="card"><div class="bar"><i id="pbar"></i></div><p id="pscore" style="color:var(--mut)">Score: 0/10 · Progress: 0/10</p></div>
+<div id="quizBox"></div>
+<div class="card" id="final" style="display:none"><h3 id="fTitle"></h3><p id="fBody"></p><p><button onclick="resetQuiz()">↻ Retake quiz</button></p></div>
+
+<h2>📦 Reproduce in 60 seconds</h2>
+<div class="card"><table><tr><th>Command</th><th>What you get</th></tr>
+<tr><td><code>pip install -r requirements.txt &amp;&amp; make all</code></td><td>10 passed · 100/100 · live + patterns JSON</td></tr>
+<tr><td><code>docker compose up --build</code></td><td>Same, containerized</td></tr>
+<tr><td><code>open docs/preview.html</code></td><td>This page (offline OK)</td></tr>
+<tr><td><code>Settings → Pages → Deploy from branch → /docs</code></td><td>Public URL for this page</td></tr></table></div>
+
+<h2>❓ FAQ</h2>
+<div class="card"><p><b>Do I need math background?</b> No — follow the beginner path.<br><b>GPU/internet?</b> No — CPU-only, offline-first with embedded snapshot.<br><b>What can I use this for?</b> Learning, interviews, teaching, sizing models before paying for GPUs, and as a template for verifying your own paper's numbers.<br><b>How do I publish?</b> Push to GitHub → Pages → <code>/docs</code> → share the link.</p></div>
+<p style="color:var(--mut);font-size:12px">MIT © ai-phd-100 contributors · Data: 30-day BTC closes + ECB FX + AAPL anchor 2026-10-06 · Charts render from embedded verified outputs.</p>
+</div>
+<script>
+const DATA={btc:[80046.71,78929.35,78548.73,77927.77,76817.93,77128.67,77218.58,76682.57,78539.74,75645.58,75622.8,76353.28,81124.12,81226.58,81197.33,86421.95,86120.19,84550.14,84249.39,84069.47,84260.05,84171.14,83514.23,83583.21,83648.98,84688.47,84543.44,84765.63,86417.75,85916.96,86151.4],mean:0.002449862476072705,se:0.003560271358783806,volRatio:7.435533095558798,kurt:3.801868960097239,ns:[512,1024,2048,4096,8192]};
+function line(id,series,opts){const c=document.getElementById(id),x=c.getContext('2d');x.clearRect(0,0,600,220);const m=Math.min(...series),M=Math.max(...series),p=14;function X(i){return p+i*(600-2*p)/(series.length-1)}function Y(v){return 200-(v-m)/(M-m||1)*170}x.strokeStyle='#2b3a6e';x.strokeRect(p,p,600-2*p,180);x.beginPath();x.strokeStyle='#5eead4';x.lineWidth=2;series.forEach((v,i)=>{i?x.lineTo(X(i),Y(v)):x.moveTo(X(i),Y(v))});x.stroke();if(opts&&opts.band){x.fillStyle='rgba(167,139,250,.18)';x.fillRect(p,Y(opts.band[1]),600-2*p,Y(opts.band[0])-Y(opts.band[1]));}}
+(function(){line('c1',DATA.btc);document.getElementById('c1cap').textContent='30 closes 80046.71 → 86151.40 · mean log-ret ≈0.0025, 95% CI straddles 0 (small-n noise, Ex57/58 lesson).';
+const r=[];for(let i=1;i<DATA.btc.length;i++)r.push(Math.log(DATA.btc[i]/DATA.btc[i-1]));const sd=a=>Math.sqrt(a.reduce((s,v)=>s+(v-a.reduce((p,q)=>p+q,0)/a.length)**2,0)/a.length);
+document.getElementById('c2cap').textContent='BTC daily vol ≈0.0192 vs EUR ≈0.0026 (ratio 7.44×) · kurtosis ≈3.80 (fat tails).';
+const c=document.getElementById('c2'),x=c.getContext('2d');x.clearRect(0,0,600,220);[['BTC',0.0192,'#5eead4'],['EUR',0.0026,'#a78bfa']].forEach((b,i)=>{const h=b[1]/0.02*170;x.fillStyle=b[2];x.fillRect(120+i*160,200-h,110,h);x.fillStyle='#eaf0ff';x.fillText(b[0]+' '+b[1],130+i*160,215);});
+const ns=DATA.ns,fl=ns.map(n=>2*n*n*4096),lx=ns.map(Math.log),ly=fl.map(Math.log);const c3=document.getElementById('c3').getContext('2d');c3.clearRect(0,0,600,220);c3.strokeStyle='#2b3a6e';c3.strokeRect(14,14,572,180);c3.beginPath();c3.strokeStyle='#5eead4';c3.lineWidth=2;lx.forEach((v,i)=>{const X=14+i*572/(lx.length-1),Y=200-(ly[i]-Math.min(...ly))/(Math.max(...ly)-Math.min(...ly))*170;i?c3.lineTo(X,Y):c3.moveTo(X,Y)});c3.stroke();c3.fillStyle='#9fb0d8';c3.fillText('slope 2.00 (quadratic)',220,40);})();
+const QUIZ=[
+{q:"Ch.1 — X is 32×512, W is 512×2048. Shape of XW?",o:["32×2048","512×512","32×512","2048×32"],a:0,e:"Outer dims survive: 32×2048. Cost 32·2048·512·2 = 67,108,864. Let's work step-by-step: inner 512 disappears."},
+{q:"Ch.2 — Eigenvalues of [[2,1],[1,2]]?",o:["{3,1}","{2,2}","{4,0}","{2.5,1.5}"],a:0,e:"Trace 4, det 3 → {3,1}. Top direction (1,1) wins power iteration ×59049."},
+{q:"Ch.3 — d/dx (3x+1)² at x=1?",o:["24","12","8","36"],a:0,e:"Chain: 2·4·3 = 24. Backprop is this repeated millions of times."},
+{q:"Ch.4 — Softmax-CE gradient w.r.t. logits?",o:["p − y (one-hot)","y − p squared","softmax twice","always zero"],a:0,e:"Correct logit pushed up, others down ∝ probability. Residual y=x+f(x) gives 1+f′ highway."},
+{q:"Ch.5 — Disease 1%, test 99%/5% FP. P(sick|positive)?",o:["≈16.7%","≈99%","≈95%","≈50%"],a:0,e:"99/(99+495) = 1/6. Rare things need strong evidence."},
+{q:"Ch.6 — 80% on 400 Qs. Standard error?",o:["±2 pts (CI 76–84%)","±0.2 pts","±8 pts","±10 pts"],a:0,e:"√(0.8·0.2/400)=0.02. A 2-pt lead (z=0.71) is not significant."},
+{q:"Ch.7 — Loss 2.0 nats. Perplexity? In bits?",o:["7.39 · 2.885 bits","2.0 · 2.0 bits","4.0 · 1.0 bit","1.0 · 0 bits"],a:0,e:"e²≈7.39; 2/ln2≈2.885 bits. CE = entropy + KL; KL order matters (0.511≠0.368)."},
+{q:"Ch.8 — Adam's first update for grad 10⁻⁶ vs 10⁶?",o:["Same size: ±LR","1000× different","Zero","NaN"],a:0,e:"m=g, v=g² → g/√g² = sign(g). Scale-invariance is why Adam works across layers."},
+{q:"Ch.9 — 7B params: infer vs Adam-train memory?",o:["14 GB vs 112 GB","7 GB vs 7 GB","140 GB vs 14 GB","1 GB vs 1 GB"],a:0,e:"bf16 2B/param → 14GB; Adam needs 16B/param → 112GB. KV-cache 2 GiB/4k sequence."},
+{q:"Ch.10 — 8k tokens doubles. QKᵀ cost? RoPE key?",o:["4× cost · relative offset only","2× · absolute","same · none","½× · random"],a:0,e:"2n²d → 4× on double. RoPE(5)−RoPE(2)=90°, shifts cancel. Chinchilla: ~20 tok/param."}];
+let score=0,done=0;const box=document.getElementById('quizBox');
+QUIZ.forEach((qq,i)=>{const d=document.createElement('div');d.className='q';d.innerHTML='<h4>Q'+(i+1)+'. '+qq.q+'</h4>';qq.o.forEach((op,j)=>{const b=document.createElement('button');b.className='opt';b.textContent=op;b.onclick=()=>{if(d.dataset.ok)return;d.dataset.ok=1;const good=j===qq.a;if(good){b.classList.add('correct');score++}else{b.classList.add('wrong');d.children[j===0?1:1];[...d.querySelectorAll('.opt')][qq.a].classList.add('correct')}d.querySelector('.exp').classList.add('show');done++;document.getElementById('pbar').style.width=(done/10*100)+'%';document.getElementById('pscore').textContent='Score: '+score+'/10 · Progress: '+done+'/10';const st=document.getElementById('path').children;if(st[i])st[i].classList.add('on');if(done===10){const f=document.getElementById('final');f.style.display='block';document.getElementById('fTitle').textContent=score>=8?'🏆 Professional level: '+score+'/10':'📈 Keep going: '+score+'/10';document.getElementById('fBody').textContent=score>=8?'You know more than most interview candidates. Next: run `make all` and read PAPER.md.':'Re-read the beginner path above, then retake — retrieval practice is the fastest way to lock it in.';document.getElementById('ringArc').style.stroke=score>=8?'#34d399':'#fbbf24';}};d.appendChild(b)});const e=document.createElement('p');e.className='exp';e.textContent='✓ '+qq.e;d.appendChild(e);box.appendChild(d)});
+function resetQuiz(){location.reload()}
+const DEMO=['$ pip install -r requirements.txt','$ make all','10 passed · 100/100 verified','BTC now $86158 · CI straddles 0 (noise, not signal)','attention slope 2.00 · Adam scale-invariant','N≈28.9B @1e23 · RoPE relative 90°','✔ open docs/preview.html — quiz + charts ready'];
+let di=0;function playDemo(){const t=document.getElementById('term');t.textContent='';di=0;const iv=setInterval(()=>{if(di>=DEMO.length){clearInterval(iv);return}t.textContent+=DEMO[di++]+'\n'},450)}
+function runQuizDemo(){document.getElementById('quiz').scrollIntoView({behavior:'smooth'});const f=document.querySelector('.q .opt');if(f)f.focus()}
+playDemo();
+</script>
+</body>
+</html>

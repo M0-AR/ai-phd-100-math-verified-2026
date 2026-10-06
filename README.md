@@ -10,7 +10,7 @@
 [![Live data](https://img.shields.io/badge/live--market-BTC%20%7C%20FX%20%7C%20AAPL-orange.svg)](benchmarks/live_market.json)
 [![Docker ready](https://img.shields.io/badge/Docker-ready-blue.svg)](Dockerfile)
 
-[🌐 Live interactive site](docs/preview.html) · [▶ 2-min demo](#-demo-watch-it-work-in-60-seconds) · [🌱 Start as a beginner](#-beginner-guide--read-this-and-you-are-a-professional) · [❓ FAQ](#-faq)
+[🌐 Live interactive site](https://m0-ar.github.io/ai-phd-100-math-verified-2026/preview.html) · [▶ 2-min demo](#-demo-watch-it-work-in-60-seconds) · [🌱 Start as a beginner](#-beginner-guide--read-this-and-you-are-a-professional) · [❓ FAQ](#-faq)
 
 </div>
 
@@ -20,8 +20,9 @@
 > and four discovered patterns (e.g. attention cost is exactly quadratic, Adam steps don't care about
 > gradient scale). If you only read one section, read the
 > [Beginner Guide](#-beginner-guide--read-this-and-you-are-a-professional): you will know more than
-> most interview candidates. Open the [live site](docs/preview.html) to try the 10-question quiz and
-> see the charts move.
+> most interview candidates. Open the [live site](https://m0-ar.github.io/ai-phd-100-math-verified-2026/preview.html) to try the 10-question quiz and
+> see the charts move. (All three URLs render the same content: `/`, `/preview.html`,
+> `/docs/preview.html` — see [GitHub Pages](#-github-pages--publish-this-repo-as-a-website).)
 
 ---
 
@@ -150,7 +151,7 @@ You need zero background. Each step is five minutes. Follow the pattern:
 
 | You are… | You will use this repo to… | Start here |
 |---|---|---|
-| 🎓 Student / self-learner | Go from zero to "I understand attention, LoRA, Adam, scaling laws" in ~1 hour | [Beginner guide](#-beginner-guide--read-this-and-you-are-a-professional) + [quiz](docs/preview.html#quiz) |
+| 🎓 Student / self-learner | Go from zero to "I understand attention, LoRA, Adam, scaling laws" in ~1 hour | [Beginner guide](#-beginner-guide--read-this-and-you-are-a-professional) + [live quiz](https://m0-ar.github.io/ai-phd-100-math-verified-2026/preview.html#quiz) |
 | 💼 Interview candidate | Answer "what shape is XW?", "why divide by √d?", "what is perplexity?", "Chinchilla rule?" with numbers | [Chapter summaries](#-what-each-chapter-proves-the-100-plainly) |
 | 🔬 Researcher / PhD | Cite a checked reference for 100 identities; extend the harness for your paper's claims | [Verification matrix](#3-verification-matrix-transcript-value---checked-value-tolerance), `PAPER.md` |
 | 🛠️ Engineer / fine-tuner | Size LoRA ranks, memory (14/112 GB), KV-cache (2 GiB), LR limits (`2/curvature`) before spending GPU money | Ch 1, 8–10 + `experiments/` |
@@ -294,10 +295,18 @@ Implication: at long context, the `n²` term dominates while optimizer steps sta
 
 The `docs/` folder is a complete static site (`preview.html` + `charts.json`). Publish it:
 
-1. Push this repo to GitHub.
+1. Push this repo to GitHub (already live at `M0-AR/ai-phd-100-math-verified-2026`).
 2. Go to **Settings → Pages → Build and deployment → Source: Deploy from a branch**.
-3. Select branch `main`, folder `/docs`, Save.
-4. Open `https://<you>.github.io/<repo>/preview.html`.
+3. Select branch `main`, folder `/docs` (recommended), Save. Root mirrors (`preview.html`,
+   `index.html`, `.nojekyll` at repo root) mean the site also resolves if source is `/`.
+4. After the Actions "pages build and deployment" run goes green (1–2 min), all three URLs
+   below must return 200 (probe with `curl -s -o /dev/null -w "%{http_code}\n" <url>`):
+
+| URL | Renders |
+|---|---|
+| `https://m0-ar.github.io/ai-phd-100-math-verified-2026/` | Redirect → interactive site |
+| `https://m0-ar.github.io/ai-phd-100-math-verified-2026/preview.html` | Interactive site (charts + quiz + demo) |
+| `https://m0-ar.github.io/ai-phd-100-math-verified-2026/docs/preview.html` | Same page via repo path (source `/`) |
 
 Prefer Actions? Add `.github/workflows/pages.yml` deploying `docs/` (static HTML, no build).
 Custom domain: **Settings → Pages → Custom domain**, add `CNAME` file in `docs/`. HTTPS is
